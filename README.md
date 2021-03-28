@@ -2,6 +2,7 @@
 ## Allow teachers to automate class attendance from Zoom Usage Report
 ### Created by Joshua Li, Esther Foo, and Charisse Hung for LA Hacks 2021
 
+## Inspiration
 In person, attendance isn’t given a second thought in the classroom. However, because of the limited time during online learning, teachers need to maximize efficiency in the classroom. To do this we can push checking attendance to after class has ended, and automate the process so that the teacher doesn’t have to manually find every student.
 
 ## What it does
