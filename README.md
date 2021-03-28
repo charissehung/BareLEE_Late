@@ -1,4 +1,4 @@
-# automated_attendance
+# BareLEE Late
 ## Allow teachers to automate class attendance from Zoom Usage Report
 ### Created by Joshua Li, Esther Foo, and Charisse Hung for LA Hacks 2021
 
