@@ -1,8 +1,5 @@
 library(tidyverse)
 
-goc <- read_csv("./clean_zoom_attendance.csv")
-roster <- write_csv("./attendance.csv")
-
 attendance <- function(att_table, zoom_table, late_time, absent_time) {
   colnames(zoom_table) <- c("Name", "Email", "Join_Time", "Leave_Time", "Duration", "Guest")
   zoom_table <- zoom_table %>% arrange(Name)
@@ -29,7 +26,3 @@ attendance <- function(att_table, zoom_table, late_time, absent_time) {
    }
   new_attendance
 }
-
-attendance(roster, goc, "20:10", 50)
-attendance(roster, goc, "20:10", 100)
-attendance(roster, goc, "20:00", 100)
