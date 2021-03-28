@@ -2,6 +2,7 @@ library(shiny)
 library(shinythemes)
 library(tidyverse)
 source("./attendance.R")
+
 # Define UI
 ui <- fluidPage(theme = shinytheme("cerulean"),
                 navbarPage(
@@ -25,17 +26,9 @@ ui <- fluidPage(theme = shinytheme("cerulean"),
                              tags$h4("Select the Zoom Usage Report file"),
                              fileInput("file2", "Choose CSV File", accept = ".csv"),
                              checkboxInput("header2", "Header", TRUE)
-                           ),
-                           mainPanel(
-                             # h1("Header 1"),
-                             # h4("Output 1"),
-                             # verbatimTextOutput("txtout")
-                             tableOutput("contents")
-                           ) # mainPanel
-                  )#, # Navbar 1, tabPanel
-                  #tabPanel("Navbar 2", "This panel is intentionally left blank"),
-                  #tabPanel("Navbar 3", "This panel is intentionally left blank")
-                ) # navbarPage
+                           )
+                  )
+                ) 
 ) # fluidPage
 # Define server function  
 server <- function(input, output) {
@@ -52,8 +45,6 @@ server <- function(input, output) {
     absent_time <- as.integer(input$txt2)
     att_table <- read_csv(file1$datapath, col_names = input$header1)
     zoom_table <- read_csv(file2$datapath, col_names = input$header2)
-    # insert function here
-    # function(att_table, zoom_table, late_time, absent_time, ....)
     attendance(att_table, zoom_table, late_time, absent_time)
   })
 }
